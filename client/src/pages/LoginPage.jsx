@@ -9,6 +9,7 @@ const LoginPage = () => {
     handleSubmit,
     register,
     setError,
+    clearErrors,
     formState: { errors },
   } = useForm();
 
@@ -27,6 +28,7 @@ const LoginPage = () => {
       title={"Login"}
       errors={errors}
       isLogin={true}
+      clearErrors={clearErrors}
     />
   );
 };

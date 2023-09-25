@@ -8,6 +8,7 @@ const RegisterPage = () => {
     handleSubmit,
     register,
     setError,
+    clearErrors,
     formState: { errors },
   } = useForm();
   const { registerUser } = useContext(UserContext);
@@ -34,6 +35,7 @@ const RegisterPage = () => {
       register={register}
       errors={errors}
       title={"Register"}
+      clearErrors={clearErrors}
     />
   );
 };

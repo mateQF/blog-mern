@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 
-const Form = ({ handleSubmit, register, title, errors, isLogin = false }) => {
-  console.log(errors);
+const Form = ({ handleSubmit, register, title, errors, isLogin = false, clearErrors }) => {
   return (
     <div className="p-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
       <form
         className="m-auto flex flex-col gap-10 p-10 border-4 rounded-lg sm:w-[30rem]"
-        onSubmit={handleSubmit}
+        onSubmit={(e) => {
+          e.preventDefault()
+          handleSubmit()
+          clearErrors()
+        }}
       >
         <h1 className="text-3xl">{title}</h1>
 
